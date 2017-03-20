@@ -53,7 +53,7 @@ The model.py file contains the code for training and saving the convolution neur
    
    My first step was to use a convolution neural network model similar to the NVIDIA model I thought this model might be appropriate because it has been used to successfully predit steering angles.
    
-   This model consists of a convolution neural network with 5 convolution layers dropout between the fully connected.The model includes RELU layers to introduce nonlinearity (code line 63-74), and the data is normalized in the model using a Keras lambda layer (code line 61). 
+   This model consists of a convolution neural network with 5 convolution layers dropouts between the fully connected layers.The model includes RELU layers to introduce nonlinearity (code line 63-74), and the data is normalized in the model using a Keras lambda layer (code line 61). 
    
    In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
    
@@ -71,7 +71,7 @@ The model.py file contains the code for training and saving the convolution neur
 
    The final model architecture (model.py lines 60-75) consisted of a convolution neural network with the following layers and layer sizes.
 
-   Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
+   Here is a visualization of the architecture.
    
    ![alt text][image2]
 
