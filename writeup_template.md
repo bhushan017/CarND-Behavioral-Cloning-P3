@@ -11,7 +11,13 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/model.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Center"
+[image2]: ./examples/Nvidia-model.png "Nvidia Model"
+[image3]: ./examples/track1-center.png "track1 center"
+[image4]: ./examples/track1-left.png "track1 left"
+[image5]: ./examples/track1-right.png "track1 right"
+[image6]: ./examples/track2-center.png "track2 center"
+[image7]: ./examples/track2-left.png "track2 left"
+[image8]: ./examples/track2-right.png "track2 right"
 
 ## Rubric Points
 Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -77,16 +83,43 @@ For details about how I created the training data, see the next section.
    The final model architecture (model.py lines 60-75) consisted of a convolution neural network with the following layers and layer sizes.
 
    Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
+   
+   ![alt text][image2]
 
    ![alt text][image1]
 
 3. Creation of the Training Set & Training Process
 
-   To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
-
-   ![alt text][image2]
+   To capture good driving behavior, I first recorded two laps on track one using center lane driving. 
+   Here is an example images of track one.
+   
+   left
+   
+   ![alt text][image4]
+   
+   center
+   
+   ![alt text][image3] 
+   
+   right
+   
+   ![alt text][image5]
 
    Then I repeated this process on track two in order to get more data points.
+   
+   Below the are the images of track two.
+   
+   left
+   
+   ![alt text][image7] 
+    
+    center
+    
+    ![alt text][image6] 
+    
+    right
+    
+    ![alt text][image8]
 
    To augment the data set, I also flipped images and angles thinking that this would generalize my model.
 
