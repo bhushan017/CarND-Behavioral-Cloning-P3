@@ -69,7 +69,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 3. Final Model Architecture
 
-   The final model architecture (model.py lines 60-75) consisted of a convolution neural network with the following layers and layer sizes.
+   The network consists of 9 layers, including a normalization layer, 5 convolutional layers and 3 fully connected layers. The final model architecture (model.py lines 60-75) consisted of a convolution neural network with the convolutions in the first three convolutional layers with a 2×2 stride and a 5×5 kernel and a non-strided convolution with a 3×3 kernel size in the last two convolutional layers.
 
    Here is a visualization of the architecture.
    
