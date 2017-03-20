@@ -18,6 +18,8 @@ The goals / steps of this project are the following:
 [image6]: ./examples/track2-center.png "track2 center"
 [image7]: ./examples/track2-left.png "track2 left"
 [image8]: ./examples/track2-right.png "track2 right"
+[image9]: ./examples/original-data.png "data"
+[image10]: ./examples/flipped.png "flipped data"
 
 ## Rubric Points
 Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -45,30 +47,13 @@ The model.py file contains the code for training and saving the convolution neur
 
 ## Model Architecture and Training Strategy
 
-1. An appropriate model architecture has been employed
-
-   I have used NVIDIA model for this project. This model consists of a convolution neural network with 3x3 and 5x5 filter sizes and depths between 32 and 64 (model.py lines 60-75).The model includes RELU layers to introduce nonlinearity (code line 63-74), and the data is normalized in the model using a Keras lambda layer (code line 61). 
-
-2. Attempts to reduce overfitting in the model
-   
-   The model contains dropout layers in order to reduce overfitting (model.py lines 68-73). The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
-
-3. Model parameter tuning
-   
-   The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 77).
-
-4. Appropriate training data
-
-   Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, left and right lane. I have also flipped the images. 
-
-For details about how I created the training data, see the next section. 
-
-## Model Architecture and Training Strategy
-
 1. Solution Design Approach
+
    The overall strategy for deriving a model architecture was to predict the steering angle of the simulator.
    
    My first step was to use a convolution neural network model similar to the NVIDIA model I thought this model might be appropriate because it has been used to successfully predit steering angles.
+   
+   This model consists of a convolution neural network with 5 convolution layers dropout between the fully connected.The model includes RELU layers to introduce nonlinearity (code line 63-74), and the data is normalized in the model using a Keras lambda layer (code line 61). 
    
    In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
    
@@ -78,7 +63,11 @@ For details about how I created the training data, see the next section.
    
    At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
-2. Final Model Architecture
+2. Attempts to reduce overfitting in the model
+   
+   The model contains dropout layers in order to reduce overfitting (model.py lines 68-73). The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+
+3. Final Model Architecture
 
    The final model architecture (model.py lines 60-75) consisted of a convolution neural network with the following layers and layer sizes.
 
@@ -88,9 +77,10 @@ For details about how I created the training data, see the next section.
 
    ![alt text][image1]
 
-3. Creation of the Training Set & Training Process
+4. Creation of the Training Set & Training Process
 
-   To capture good driving behavior, I first recorded two laps on track one using center lane driving. 
+   The model was trained on an AWS g2.2xlarge EC2 instanceTo capture good driving behavior, I first recorded two laps on track    one using center lane driving. 
+   
    Here is an example images of track one.
    
    left
@@ -122,6 +112,10 @@ For details about how I created the training data, see the next section.
     ![alt text][image8]
 
    To augment the data set, I also flipped images and angles thinking that this would generalize my model.
+   
+   ![alt text][image9]
+   
+   ![alt text][image10]
 
    I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
